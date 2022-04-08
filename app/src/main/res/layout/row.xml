@@ -5,14 +5,14 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/editImageView"
         android:layout_width="5dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         app:srcCompat="@android:drawable/ic_menu_edit" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/deleteImageView"
         android:layout_width="5dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"

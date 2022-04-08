@@ -43,6 +43,21 @@ public class DataModel extends ViewModel {
     }
 
     public int getNumberPerson() {
-        return mPersons.getValue().size();
+        return mPersons == null? 0 :
+                mPersons.getValue() == null ? 0:
+                        mPersons.getValue().size();
+    }
+
+    public Person updatePerson(int id, String surname, String name) {
+        Person person =  getPersons().getValue().stream().filter(p -> p.getId() == id).findFirst().get();
+        person.setSurname(surname);
+        person.setName(name);
+        mPersons.setValue(mPersons.getValue());
+        return person;
+    }
+
+    public void removeById(int id) {
+        getPersons().getValue().removeIf(p -> p.getId() == id);
+        mPersons.setValue(mPersons.getValue());
     }
 }
